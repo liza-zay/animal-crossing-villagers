@@ -27,6 +27,11 @@
 				text-transform: uppercase;
 				animation: blinkingText 0.8s infinite;
 			}
+			#mainDiv p span{
+				font-size: 60px;
+			}
+			#mainDiv p span:before {content:'большой'; vertical-align: middle;}
+			#mainDiv p span:hover:before {content:"маленький"; font-size: 20px;}
 			@keyframes blinkingBackground{
 				0%		{ background-color: #6ac6dc;}
 				24%		{ background-color: #6ac6dc;}
@@ -54,7 +59,7 @@
 	</head>
 	<body>
 		<div id="mainDiv">
-			<p>Миша - умница</p>
+			<p>У Миши <span></span> пенис</p>
 		</div>
 	</body>
 </html>
