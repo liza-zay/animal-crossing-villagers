@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Миша - умница</title>
+		<style>
+			body{
+				margin:0;
+				height:100%;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			#mainDiv{
+				height:100%;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				background-color:#6ac6dc;
+				animation: blinkingBackground 0.8s infinite;
+			}
+			#mainDiv p{
+				margin:0;
+				color:#f9e272;
+				font-weight: bolder;
+				font-size: 40px;
+				text-transform: uppercase;
+				animation: blinkingText 0.8s infinite;
+			}
+			@keyframes blinkingBackground{
+				0%		{ background-color: #6ac6dc;}
+				24%		{ background-color: #6ac6dc;}
+				25%		{ background-color: #ea6258;}
+				49%		{ background-color: #ea6258;}
+				50%		{ background-color: #f7f6f4;}
+				74%		{ background-color: #f7f6f4;}
+				75%		{ background-color: #fa9d96;}
+				99%		{ background-color: #fa9d96;}
+				100%	{ background-color: #6ac6dc;}
+			}
+			@keyframes blinkingText{
+				0%		{ color: #f9e272;}
+				24%		{ color: #f9e272;}
+				25%		{ color: #4465b5;}
+				49%		{ color: #4465b5;}
+				50%		{ color: #74c394;}
+				74%		{ color: #74c394;}
+				75%		{ color: #88a6c5;}
+				99%		{ color: #88a6c5;}
+				100%	{ color: #f9e272;}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="mainDiv">
+			<p>Миша - умница</p>
+		</div>
+	</body>
+</html>
