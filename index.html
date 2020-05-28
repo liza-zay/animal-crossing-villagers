@@ -14,28 +14,29 @@
 				display:flex;
 				justify-content: center;
 				align-items: center;
+				flex-wrap:wrap;
 				position:absolute;
 				width:100%;
 				text-align:center;
 				background-color:#6ac6dc;
-				animation: blinkingBackground 3s infinite;
+				/* animation: blinkingBackground 3s infinite; */
 			}
 			#mainDiv p{
 				margin:0;
 				color:#f9e272;
+				width:100%;
 				font-weight: bold;
 				font-size: 40px;
 				text-transform: uppercase;
-				animation: blinkingText 3s infinite;
+				/* animation: blinkingText 3s infinite;*/
 			}
 			#mainDiv img{
 				width:32px;
 				height:32px;
-				display:block;
 			}
 			#mainDiv p span:before{
 				content:'красавчик';
-				animation: changeText 3s infinite;
+				/* animation: changeText 3s infinite; */
 			}
 			@keyframes blinkingBackground{
 				0%		{ background-color: #6ac6dc;}
