@@ -28,9 +28,7 @@
 					<th>Favorite Song</th>
 					<th>Favorite Saying</th>
 					<th>Styles</th>
-					<th>Style 2</th>
 					<th>Colors</th>
-					<th>Color 2</th>
 				</tr>
 			</thead>
 		</table>
@@ -48,23 +46,26 @@
 					{ data: 'Gender' },
 					{ data: 'Personality' },
 					{ data: 'Hobby' },
-					{ data: 'Birthday' },
+					{ data: 'Birthday', type: 'date' },
 					{ data: 'Catchphrase' },
 					{ data: 'Favorite Song' },
 					{ data: 'Favorite Saying' },
 					{ data: 'Style 1'},
-					{ data: 'Style 2'},
 					{ data: 'Color 1' },
-					{ data: 'Color 2' }
 				],
 					"columnDefs": [
+					{
+						"render": function ( data, type, row ) {
+							return '<img src="https://acnhcdn.com/latest/NpcIcon/'+row['Filename']+'.png" style="width:60px">';
+						},
+						"targets": 1
+					},
 					{
 						"render": function ( data, type, row ) {
 							return data === row['Style 2'] ? data : data +', '+ row['Style 2'];
 						},
 						"targets": 10
 					},
-					{ "visible": false,  "targets": [11] },
 					{
 						"width": "60px",
 						"render": function ( data, type, row ) {
@@ -91,9 +92,8 @@
 								return '<div style="display:inline-block; width:16px; height:16px; border-radius:4px; vertical-align:-7px; margin:3px; border:1px solid black; background-color:'+color+'"></div>'
 							}
 						},
-						"targets": 12
+						"targets": 11
 					},
-					{ "visible": false,  "targets": [13] }
 				]
 				} );
 			} );
