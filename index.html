@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<<<<<<< HEAD
 		
 		<title>Миша - умница</title>
 		<style>
@@ -78,5 +79,104 @@
 			<p>Миша - <span></span></p>
 			<img src="linkedin.png">
 		</div>
+=======
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+		<title>Animal Crossing - Villagers List</title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<table id="table_id" class="hover compact">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Image</th>
+					<th>Species</th>
+					<th>Gender</th>
+					<th>Personality</th>
+					<th>Hobby</th>
+					<th>Birthday</th>
+					<th>Catchphrase</th>
+					<th>Favorite Song</th>
+					<th>Favorite Saying</th>
+					<th>Styles</th>
+					<th>Colors</th>
+				</tr>
+			</thead>
+		</table>
+		<script>
+			$(document).ready( function () {
+				$('#table_id').DataTable( {
+				ajax: {
+					url: 'https://raw.githubusercontent.com/liza-zay/animal-crossing-villagers/master/data/villagers.json.txt',
+					dataSrc: ''
+				},
+				columns: [
+					{ data: 'Name' },
+					{ data: 'Icon Image' },
+					{ data: 'Species' },
+					{ data: 'Gender' },
+					{ data: 'Personality' },
+					{ data: 'Hobby' },
+					{ data: 'Birthday', type: 'date' },
+					{ data: 'Catchphrase' },
+					{ data: 'Favorite Song' },
+					{ data: 'Favorite Saying' },
+					{ data: 'Style 1'},
+					{ data: 'Color 1' },
+				],
+					"columnDefs": [
+					{
+						"render": function ( data, type, row ) {
+							return '<img src="https://acnhcdn.com/latest/NpcIcon/'+row['Filename']+'.png" style="width:60px">';
+						},
+						"targets": 1
+					},
+					{
+						"render": function ( data, type, row ) {
+							return data === row['Style 2'] ? data : data +', '+ row['Style 2'];
+						},
+						"targets": 10
+					},
+					{
+						"width": "60px",
+						"render": function ( data, type, row ) {
+							var colors = {
+								'Black':'#000000',
+								'Blue':'#42A5F5',
+								'Pink':'#F06292',
+								'Red':'#F44336',
+								'Yellow':'#FFEB3B',
+								'Green':'#66BB6A',
+								'Colorful':'#000',
+								'Aqua':'#26C6DA',
+								'Orange':'#FFA726',
+								'Purple':'#9C27B0',
+								'Brown':'#6D4C41',
+								'Beige':'#d5bda3',
+								'White':'#ffffff',
+								'Gray':'#9E9E9E',
+							}
+							return data === row['Color 2'] 
+							? makeColorDiv(colors[data]) + data 
+							: makeColorDiv(colors[data]) + data + '<br>' + makeColorDiv(colors[row['Color 2']]) + row['Color 2'];
+							function makeColorDiv(color){
+								return '<div style="display:inline-block; width:16px; height:16px; border-radius:4px; vertical-align:-7px; margin:3px; border:1px solid black; background-color:'+color+'"></div>'
+							}
+						},
+						"targets": 11
+					},
+				]
+				} );
+			} );
+		</script>
+>>>>>>> master
 	</body>
 </html>
